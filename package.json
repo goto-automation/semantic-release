@@ -1,7 +1,7 @@
 {
-  "name": "semantic-release",
+  "name": "@agaudreault-jive/semantic-release",
   "description": "Automated semver compliant package publishing",
-  "version": "0.0.0-development",
+  "version": "17.4.2-allow-outdated-head-356914d",
   "author": "Stephan Bönnemann <stephan@boennemann.me> (http://boennemann.me)",
   "ava": {
     "files": [
@@ -111,7 +111,8 @@
     "trailingComma": "es5"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "allow-same-version": true
   },
   "repository": {
     "type": "git",
