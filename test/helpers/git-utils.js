@@ -152,7 +152,7 @@ export async function gitFetch(repositoryUrl, execaOptions) {
  * @param {Object} [execaOpts] Options to pass to `execa`.
  */
 export async function gitReset(head, execaOptions) {
-  await execa('git', ['reset', '--hard', head], execaOptions);
+  await execa("git", ["reset", "--hard", head], execaOptions);
 }
 
 /**
