@@ -179,6 +179,9 @@
 - [semantic-release-coralogix](https://github.com/adobe/semantic-release-coralogix)
   - `verifyConditions` Verified that required credentials are provided and API is accessible
   - `publish` add a release tag to Coralogix
+- [semantic-release-jira-notes](https://github.com/iamludal/semantic-release-jira-notes)
+  - `verifyConditions`: Validate the config options.
+  - `generateNotes`: Generate the release notes with links to JIRA issues.
 - [semantic-release-major-tag](https://github.com/doteric/semantic-release-major-tag)
   - `success` Create major version tag, for example `v1`.
 - [semantic-release-yarn](https://github.com/hongaar/semantic-release-yarn)
@@ -187,3 +190,7 @@
   - `prepare` Update the `package.json` version and create the package tarball.
   - `addChannel` Add a tag for the release.
   - `publish` Publish to the npm registry.
+- [semantic-release-pub](https://github.com/zeshuaro/semantic-release-pub)
+  - `verifyConditions`: Verify the presence of the `pub.dev` authentication and release configuration
+  - `prepare`: Update the `pubspec.yaml` version
+  - `publish`: Publish the package onto the `pub.dev` registry

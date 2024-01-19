@@ -73,12 +73,12 @@ test("Get the head commit on the remote with multiple branch name match", async 
   // Create a git repository, set the current working directory at the root of the repo
   const { cwd, repositoryUrl } = await gitRepo(true);
   // Add commits to the master branch
-  const [commit] = await gitCommits(['First'], { cwd });
-  await gitPush(repositoryUrl, 'master', { cwd });
-  await gitCommits(['Second'], { cwd });
-  await gitPush(repositoryUrl, 'a-prefix/master', { cwd });
+  const [commit] = await gitCommits(["First"], { cwd });
+  await gitPush(repositoryUrl, "master", { cwd });
+  await gitCommits(["Second"], { cwd });
+  await gitPush(repositoryUrl, "a-prefix/master", { cwd });
 
-  const result = await getGitRemoteHead(repositoryUrl, 'master', { cwd });
+  const result = await getGitRemoteHead(repositoryUrl, "master", { cwd });
 
   t.is(result, commit.hash);
 });
