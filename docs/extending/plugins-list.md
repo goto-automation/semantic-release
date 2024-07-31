@@ -133,10 +133,6 @@
   - `verifyConditions`: Verify the environment variable `PYPI_TOKEN` and installation of build tools
   - `prepare`: Update the version in `setup.cfg` and create the distribution packages
   - `publish`: Publish the python package to a repository (default: pypi)
-- [semantic-release-helm](https://github.com/m1pl/semantic-release-helm)
-  - `verifyConditions`: Validate configuration and (if present) credentials
-  - `prepare`: Update version and appVersion in `Chart.yaml`
-  - `publish`: Publish the chart to a registry (if configured)
 - [semantic-release-codeartifact](https://github.com/ryansonshine/semantic-release-codeartifact)
   - `verifyConditions`: Validate configuration, get AWS CodeArtifact authentication and repository, validate `publishConfig` or `.npmrc` (if they exist), then pass the configuration to the associated plugins.
 - [semantic-release-telegram](https://github.com/pustovitDmytro/semantic-release-telegram)
@@ -194,3 +190,11 @@
   - `verifyConditions`: Verify the presence of the `pub.dev` authentication and release configuration
   - `prepare`: Update the `pubspec.yaml` version
   - `publish`: Publish the package onto the `pub.dev` registry
+- [semantic-release-hackage](https://github.com/stackbuilders/semantic-release-hackage)
+  - `verifyConditions`: Verify the environment variable `HACKAGE_TOKEN`
+  - `prepare`: Update the version of .cabal file and create the distribution package (.tar)
+  - `publish`: Publish the release candidate to the specified repository in Hackage
+- [semantic-release-pull-request-analyzer](https://github.com/bobvanderlinden/semantic-release-pull-request-analyzer)
+  - `verifyConditions` Verify configuration options and existance of GitHub token.
+  - `analyzeCommits` Determine the type of release by analyzing merged GitHub pull requests and their labels.
+  - `generateNotes` Generates release notes using [GitHub release notes generator](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes).
