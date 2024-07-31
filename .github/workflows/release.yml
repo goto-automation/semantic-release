@@ -18,13 +18,13 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: npm
           node-version: lts/*
       - run: npm clean-install
-      - run: npm audit signatures
+      - run: corepack npm audit signatures
       # pinned version updated automatically by Renovate.
       # details at https://semantic-release.gitbook.io/semantic-release/usage/installation#global-installation
       - run: npx semantic-release@21.0.2
