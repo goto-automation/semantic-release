@@ -29,7 +29,8 @@ jobs:
           - 20
           - 21
 
-    runs-on: ubuntu-latest
+    runs-on:
+      group: goto-linux
     timeout-minutes: 5
 
     steps:
@@ -47,7 +48,8 @@ jobs:
 
   # verify against the node version defined for development in the .nvmrc
   test_dev:
-    runs-on: ubuntu-latest
+    runs-on:
+      group: goto-linux
     timeout-minutes: 5
 
     steps:
@@ -66,7 +68,8 @@ jobs:
   # separate job to set as required in branch protection,
   # as the build names above change each time Node versions change
   test:
-    runs-on: ubuntu-latest
+    runs-on:
+      group: goto-linux
     needs:
       - test_dev
       - test_matrix

@@ -35,7 +35,8 @@ permissions:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on:
+      group: goto-linux
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues

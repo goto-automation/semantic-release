@@ -9,7 +9,8 @@ permissions: read-all
 jobs:
   analysis:
     name: Scorecard analysis
-    runs-on: ubuntu-latest
+    runs-on:
+      group: goto-linux
     permissions:
       security-events: write
       id-token: write
