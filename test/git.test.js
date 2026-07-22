@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import test from "ava";
 import { temporaryDirectory } from "tempy";
 import {
@@ -439,4 +441,17 @@ test("Validate that first commit is ancestor of second", async (t) => {
 
   t.true(await isAncestor(first.hash, second.hash, { cwd }));
   t.false(await isAncestor(second.hash, first.hash, { cwd }));
+});
+
+test("Does not execute a `repositoryUrl` injected as a `--receive-pack` git option", async (t) => {
+  const { cwd } = await gitRepo(true);
+  await gitCommits(["First"], { cwd });
+  const marker = path.join(temporaryDirectory(), "receive-pack-rce");
+  // `--receive-pack` is the push-side equivalent: it lets the injected value
+  // run an arbitrary binary when pushing to the (configured) remote.
+  const repositoryUrl = `--receive-pack=touch ${marker}`;
+
+  await t.throwsAsync(push(repositoryUrl, { cwd }));
+
+  t.false(existsSync(marker));
 });
